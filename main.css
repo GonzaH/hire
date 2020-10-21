@@ -1,37 +1,48 @@
 /******************************************************************************/
+
 /*                               General Style                                */
+
 /******************************************************************************/
 
 body {
-  color: #272727;
+  /* color: #f0f0f0; */
+  color: #f0f0f0c0;
   background: 0 0;
-  background-color: #f0f0f0;
+  background-color: #202020;
 }
-html{
+
+html {
   font-family: "Inconsolata", "monospace";
   font-size: 20px;
 }
+
 * {
   text-size-adjust: 180%;
 }
+
 h2 {
   margin-top: 1.7em;
 }
+
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
+
 a {
   text-decoration: none;
 }
+
 ul {
   margin: 0;
   padding-left: 0;
   list-style-type: none;
 }
+
 ul li {
   padding-left: 1em;
 }
-li:before{
+
+li:before {
   /* I'm literally the worst person */
   content: "-"
 }
@@ -41,23 +52,28 @@ li:before{
   margin: auto;
   padding: 60px 30px;
 }
-@media screen and (max-width: 720px) {
-  .wrapper {
-    padding: 0.4rem;
-  }
-}
 
-.main-header{
-  display:flex;
+.main-header {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 1.5rem;
 }
-.my-name{
+
+.my-name {
   font-size: 3rem;
 }
-.main-header img{
-  /* align-self: stretch; */
+
+.language-change {
+  display: flex;
+  justify-content: end;
+}
+
+.language-change a {
+  color: #5aa2ff
+}
+
+.main-header img {
   max-height: 6rem;
 }
 
@@ -69,40 +85,78 @@ li:before{
   vertical-align: bottom;
 }
 
-.header-underline{
+.header-underline {
   font-size: 2rem;
   overflow: hidden;
 }
 
-.links-wrapper{
+.links-wrapper {
   display: flex;
-  justify-content: space-around;
-  padding: 0 1rem;
   width: calc(100% - 2rem);
-}
-.links{
-  margin: auto;
-  display: inline-block;
-}
-.links a:after {
-  content: " |"
-}
-.links a:first-child:before {
-  content: "| "
+  padding: 0 1rem;
 }
 
-.introduction{
+.links {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.links a {
+  color: #5aa2ff;
+  padding-right: 5px;
+  padding-left: 10px;
+}
+
+.introduction {
   padding: 0 1em;
 }
-.section-content{
+
+.section-content {
   padding-left: 1em;
+  text-align: justify;
 }
 
-.dated-header{
+.dated-header {
   display: flex;
   justify-content: space-between;
 }
-.dated-header .header-date{
+
+.dated-header .header-date {
   font-size: 1rem;
   align-self: center;
+}
+
+.non-work-things {
+  text-align: justify;
+}
+
+.non-work-things a {
+  color: #5aa2ff
+}
+
+@media screen and (min-width: 720px) {
+  .links div:after {
+    content: "|"
+  }
+  .links div:first-child:before {
+    content: "|"
+  }
+}
+
+@media screen and (max-width: 720px) {
+  html {
+    font-size: 1.4em;
+  }
+  .wrapper {
+    padding: 0.4rem;
+  }
+  .links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  .my-name {
+    font-size: 2rem;
+  }
 }
